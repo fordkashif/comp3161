@@ -2,11 +2,17 @@
     <div class="col-sm-6">
         <h2>Sign Up</h2>
         <input type="text" class="form-control" ng-model="signUpInfo.firstname" placeholder="Enter First Name">
+        <br>
         <input type="text" class="form-control" ng-model="signUpInfo.lastname" placeholder="Enter Last Name">
+        <br>
         <input type="text" class="form-control" ng-model="signUpInfo.username" placeholder="Choose a Username">
+        <br>
         <input type="password" class="form-control" ng-model="signUpInfo.password" placeholder="Choose Password">
+        <br>
         <input type="text" class="form-control" ng-model="signUpInfo.address" placeholder="Enter Address">
+        <br>
         <input type="email" class="form-control" ng-mode="signUpInfo.email" placeholder="Enter Email">
+        <br>
         
         <button ng-click="signUserUp()">Sign-Up</button>
     </div>
@@ -14,8 +20,10 @@
     <div class="col-sm-6">
          <h2>Login</h2>
         <input type="text" class="form-control" ng-model="loginInfo.username" placeholder="Username">
+        <br>
         <input type="password" class="form-control" ng-model="loginInfo.password" placeholder="Password">
-        <button ng-click="loginUser()">Sign-Up</button>
+        <br>
+        <button ng-click="loginUser()">Login</button>
     
     
     </div>
