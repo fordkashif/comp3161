@@ -2,21 +2,21 @@
     include("../connection.php");
     $data = json_decode(file_get_contents("php://input"));
     $password = sha1($data->password);
-    $email = $data->email;
+    $username = $data->username;
 
-    $userInfo = $db->query("SELECT email FROM users WHERE email='$email' AND password='$password'");
+    $userInfo = $db->query("SELECT username FROM user WHERE username='$username' AND password='$password'");
     $userInfo = $userInfo->fetchAll();
 
 	$token; 
 	if (count($userInfo) == 1){
 		//This means that the user is logged in and let's givem a token :D :D :D
-		$token = $email . " | " . uniqid() . uniqid() . uniqid();
+		$token = $username. " | " . uniqid() . uniqid() . uniqid();
 		
-	$q = "UPDATE users SET token=:token WHERE email=:email AND password=:password";
-	$query = $db->prepare($q);
+	$q2 = "UPDATE user SET token=:token WHERE username=:username AND password=:password";
+	$query = $db->prepare($q2);
 	$execute = $query->execute(array(
 		":token" => $token,
-		":email" => $email,
+		":username" => $username,
 		":password" => $password
 	)); 
 

@@ -11,7 +11,7 @@ app.controller("LoginController", function($scope, $http, $state){
     }
     
     $scope.loginInfo = {
-        email: undefined,
+        username: undefined,
         password: undefined
     }
     
@@ -32,7 +32,7 @@ app.controller("LoginController", function($scope, $http, $state){
     $scope.signUserUp = function (){
         var data = {
             firstname: $scope.signUpInfo.firstname,
-            lastname: $scope.signUpInfo.lastnam,
+            lastname: $scope.signUpInfo.lastname,
             username: $scope.signUpInfo.username,
             password: $scope.signUpInfo.password,
             address: $scope.signUpInfo.address,
